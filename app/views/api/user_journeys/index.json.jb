@@ -1,0 +1,3 @@
+@user_journeys.map do |journey|
+  render partial: 'user_journey.json.jb', locals: {user_journey: user_journey}
+end

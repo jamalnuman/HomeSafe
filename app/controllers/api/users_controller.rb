@@ -6,22 +6,25 @@ class Api::UsersController < ApplicationController
   end
 
   def create
-    @user = User.create(first_name: params[:first_name], 
+    user = User.new(first_name: params[:first_name], 
                         last_name: params[:last_name],
                         email: params[:email],
-                        phone_number: params[:phone_number]
+                        phone_number: params[:phone_number], 
+                        password: params[:password],
+                        password_confirmation: params[:password_confirmation]
                         )
-    if @user.save 
-      render 'show.json.jb'
+    if user.save
+      render json: {message: "User created successfully"}, status: :created
     else
-      render json: {errors: @users.errors.full_messages}, status: :unprocessable_entity
-    end 
+      render json: {errors: user.errors.full_messages}, status: :bad_request
+    end
   end
 
   def show
     @user = User.find(params[:id])
     render 'show.json.jb'
   end 
+
 
   def update
     @user = User.find(params[:id])
@@ -38,13 +41,10 @@ class Api::UsersController < ApplicationController
     end
   end 
 
+
   def destroy
     @user = User.find(params[:id])
     @user.destroy
     render json: {message: 'User has been deleted!'}
   end
-
-
-
-
 end

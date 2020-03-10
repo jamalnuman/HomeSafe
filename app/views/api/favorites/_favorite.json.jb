@@ -1,0 +1,4 @@
+{
+  user_id: favorite.user_id, 
+  location_id: favorite.location_id
+}

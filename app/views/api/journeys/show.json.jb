@@ -1,0 +1,1 @@
+  render partial: 'journey.json.jb', locals: {journey: @journey}

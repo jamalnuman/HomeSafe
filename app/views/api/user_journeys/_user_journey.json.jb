@@ -1,0 +1,6 @@
+{
+  ending_location_id: User.user_journeys,
+  user_id: current_user.id,
+  journey_id: journey.id,
+  completed: false
+}

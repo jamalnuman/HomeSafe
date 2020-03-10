@@ -1,0 +1,8 @@
+{
+  id: location.id,
+  name: location.name, 
+  address: location.address, 
+  phone_number: location.phone_number,
+  latitude: location.latitude, 
+  longitude: location.longitude
+}
