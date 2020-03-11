@@ -1,3 +1,4 @@
 {
-  starting_location_id: user.location.id #check to see if this is correct
+  id: journey.id,
+  starting_location_id: journey.starting_location_id #check to see if this is correct
 }

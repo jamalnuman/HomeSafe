@@ -1,7 +1,7 @@
 class Api::LocationsController < ApplicationController
 
   def index
-    @locations = User.locations #the reason its called on a user is cause the locations are specif to a user
+    @locations = current_user.locations.all #the reason its called on a user is cause the locations are specif to a user
     render 'index.json.jb'
   end
 

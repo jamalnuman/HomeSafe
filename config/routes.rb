@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     delete '/locations/:id' => 'locations#destroy'
 
     post '/favorites' => 'favorites#create'
-    delete '/favorites' => 'favorites#destroy'
+    delete '/favorites/:id' => 'favorites#destroy'
 
     post '/sessions' => 'sessions#create'
 

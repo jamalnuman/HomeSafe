@@ -1,13 +1,13 @@
 class Api::JourneysController < ApplicationController
 
   def index
-    @journeys = current_user.journeys
+    @journeys = current_user.journeys # or it can be current_user.journeys..this was it was linked to a speific user, which required login
     render 'index.json.jb'
   end
 
 
   def create
-    @journey = Journey.new(starting_location_id: user.location.id) #dont think this is correct
+    @journey = Journey.new(starting_location_id: params[:starting_location_id]) 
 
     if @journey.save 
       render 'show.json.jb'
@@ -34,7 +34,6 @@ class Api::JourneysController < ApplicationController
       render json: {errors: @journey.errors.full_messages}, status: :unprocessable_entity
     end
   end
-
 
   def destroy
     @journey = Journey.find(params[:id])
