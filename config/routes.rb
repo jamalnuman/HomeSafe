@@ -28,6 +28,5 @@ Rails.application.routes.draw do
     get '/user_journeys/:id' => 'user_journeys#show'
     patch '/user_journeys/:id' => 'user_journeys#update'
     delete '/user_journeys/:id' => 'user_journeys#destroy'
-
   end
 end

@@ -1,18 +1,18 @@
 class Api::UserJourneysController < ApplicationController
 
   def index
-    @user_journeys = current_user.user_journeys # or UserJourney.all
+    @user_journeys = current_user.user_journeys 
     render 'index.json.jb'
   end
 
   def create 
-    @user_journey = UserJourney.find_or_created_by(user_id: params[:user_id]
+    @user_journey = UserJourney.find_or_create_by(user_id: params[:user_id],
                                                    journey_id: params[:journey_id] 
                                                   )
 
-    @user_journey.completed = params[:completed] || false
+    @user_journey.completed = params[:completed] || 0
     @user_journey.ending_location_id = params[:ending_location_id] if params[:ending_location_id]
-    
+
     if @user_journey.save
       render 'show.json.jb'
     else
