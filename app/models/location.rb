@@ -18,9 +18,9 @@ class Location < ApplicationRecord
     self.longitude = results.first.coordinates[1]
   end
 
-  def create_map
-    self.map = "https://maps.googleapis.com/maps/api/staticmap?center=#{self.address}&size=300x300&zoom=17&markers=size:medium|color:brown|label:P|#{self.lat},#{self.lng}&key=#{Rails.application.credentials.google[:api_key]}"
-  end
+  # def create_map
+  #   self.map = "https://maps.googleapis.com/maps/api/staticmap?center=#{self.address}&size=300x300&zoom=17&markers=size:medium|color:brown|label:P|#{self.lat},#{self.lng}&key=#{Rails.application.credentials.google[:api_key]}"
+  # end
 
   
 end

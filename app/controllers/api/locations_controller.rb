@@ -8,13 +8,13 @@ class Api::LocationsController < ApplicationController
 
 
   def create 
-    @location = Location.new(name: params[:name],
+    @location = Location.new(name: params[:name] || params[:address],
                              address: params[:address],
                              phone_number: params[:phone_number]
                             )
-    @location.latitude_longitude
-    # @create_map
 
+      @location.latitude_longitude
+      #@location.create_map
     if @location.save
       render 'show.json.jb'
     else
