@@ -1,6 +1,7 @@
+# this will be the 'data' of the 'response' from the axios call. the additional keys after the 'response' will be the keys listed below
 {
   id: user_journey.id,
-  ending_location_id: user_journey.ending_location_id,
+  ending_location: (render partial: "api/locations/location.json.jb", locals: {location: user_journey.ending_location }),
   user_id: user_journey.user_id,
   journey_id: user_journey.journey_id,
   completed: user_journey.completed

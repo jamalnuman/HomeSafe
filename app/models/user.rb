@@ -5,7 +5,7 @@ class User < ApplicationRecord
 
   validates :email, presence: true, uniqueness: true
 
-  validates :phone_number, presence: true, uniqueness: true
+  validates :phone_number, presence: true
 
   has_many :favorites
   has_many :locations, through: :favorites

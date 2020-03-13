@@ -1,5 +1,6 @@
 class Api::LocationsController < ApplicationController
-
+  before_action :authenticate_user
+  
   def index
     @locations = current_user.locations.all #the reason its called on a user is cause the locations are specif to a user
     render 'index.json.jb'

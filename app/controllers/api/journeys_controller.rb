@@ -1,4 +1,5 @@
 class Api::JourneysController < ApplicationController
+  before_action :authenticate_user
 
   def index
     @journeys = current_user.journeys # or it can be current_user.journeys..this was it was linked to a speific user, which required login

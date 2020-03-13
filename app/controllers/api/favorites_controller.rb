@@ -1,5 +1,6 @@
 class Api::FavoritesController < ApplicationController
-
+  before_action :authenticate_user
+  
   def create
     @favorite = Favorite.new(user_id: current_user.id,
                              location_id: params[:location_id] 

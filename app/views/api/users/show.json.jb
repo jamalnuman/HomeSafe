@@ -1,1 +1,1 @@
-render partial: 'user.json.jb', locals: {user: @user}
+render partial: 'user.json.jb', locals: {user: @user} #the key in the locals hash (user) is just like the key of the locals hash in index.json.jb..the value of the locals hash (@user) is referring to a specifc @user, which is found by an id in the controller actions. 

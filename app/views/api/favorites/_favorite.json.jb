@@ -1,3 +1,4 @@
+# this will be the 'data' of the 'response' from the axios call. the additional keys after the 'response' will be the keys listed below
 {
   user_id: favorite.user_id, 
   location_id: favorite.location_id

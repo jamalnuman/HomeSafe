@@ -1,6 +1,6 @@
 class UserJourney < ApplicationRecord
 
-  validates :user_id, uniqueness: {scope: journey_id}
+  validates :user_id, uniqueness: {scope: :journey_id}
 
 
   belongs_to :user 

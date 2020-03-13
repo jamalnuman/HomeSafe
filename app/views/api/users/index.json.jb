@@ -1,3 +1,3 @@
 @users.map do |user|
-  render partial: 'user.json.jb', locals: {user: user}
+  render partial: 'user.json.jb', locals: {user: user} #the key in the locals hash (user) is like a variable in a function..it has to be defined here first prior to use, just like a variable in a function. it is available in the the partial file cause it was mentioned here..it is the only variable available to be called upon in the partial file, except the current_user from the sessions method(as read in the notes)...the value of the locals hash is referring to the block element of the map method
 end

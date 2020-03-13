@@ -1,4 +1,5 @@
+# this will be the 'data' of the 'response' from the axios call. the additional keys after the 'response' will be the keys listed below
 {
   id: journey.id,
-  starting_location_id: journey.starting_location_id #check to see if this is correct
+  starting_location_id: journey.starting_location_id 
 }
