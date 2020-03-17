@@ -1,6 +1,6 @@
 # this will be the 'data' of the 'response' from the axios call. the additional keys after the 'response' will be the keys listed below
 {
-  location_id: location.id,
+  id: location.id,
   name: location.name, 
   address: location.address, 
   phone_number: location.phone_number,

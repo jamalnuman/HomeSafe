@@ -10,7 +10,10 @@ class Api::JourneysController < ApplicationController
   def create
     @journey = Journey.new(starting_location_id: params[:starting_location_id]) 
 
-    if @journey.save 
+    if @journey.save
+      UserJourney.create(user_id: current_user.id,
+                         journey_id: @journey.id,
+                         completed: false) 
       render 'show.json.jb'
     else
       render json: {errors: @journey.errors.full_messages}, status: :unprocessable_entity

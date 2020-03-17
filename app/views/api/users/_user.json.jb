@@ -1,7 +1,7 @@
 # this will be the 'data' of the 'response' from the axios call. the additional keys after the 'response' will be the keys listed below
 #the user attribute is available here cause it was first defined in the index.json.jb or show.json.jb.
 { 
-  user_id: user.id,
+  id: user.id,
   first_name: user.first_name, 
   last_name: user.last_name,
   email: user.email, 

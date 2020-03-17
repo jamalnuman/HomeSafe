@@ -2,7 +2,7 @@ class Api::LocationsController < ApplicationController
   before_action :authenticate_user
   
   def index
-    @locations = current_user.locations.all #the reason its called on a user is cause the locations are specif to a user
+    @locations = Location.all #the reason its called on a user is cause the locations are specif to a user....current_user.location.all
     render 'index.json.jb'
   end
 
@@ -13,7 +13,7 @@ class Api::LocationsController < ApplicationController
                              phone_number: params[:phone_number]
                             )
 
-      @location.latitude_longitude
+      #@location.latitude_longitude
       #@location.create_map
     if @location.save
       render 'show.json.jb'
