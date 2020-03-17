@@ -13,9 +13,9 @@ class Location < ApplicationRecord
   has_many :user_journeys, foreign_key: 'ending_location_id'
 
   def latitude_longitude
-    # results = Geocoder.search(self.address)
-    # self.latitude = results.first.coordinates[0]
-    # self.longitude = results.first.coordinates[1]
+    results = Geocoder.search(self.address)
+    self.latitude = results.first.coordinates[0]
+    self.longitude = results.first.coordinates[1]
   end
 
   # def create_map

@@ -13,8 +13,7 @@ class Api::LocationsController < ApplicationController
                              phone_number: params[:phone_number]
                             )
 
-      #@location.latitude_longitude
-      #@location.create_map
+      @location.latitude_longitude
     if @location.save
       render 'show.json.jb'
     else

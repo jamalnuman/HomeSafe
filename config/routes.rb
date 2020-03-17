@@ -22,6 +22,7 @@ Rails.application.routes.draw do
     get '/journeys/:id' => 'journeys#show'
     patch '/journeys/:id' => 'journeys#update'
     delete '/journeys/:id' => 'journeys#destroy'
+    post '/journeys/:id/add_user' => 'journeys#add_user'
 
     get '/user_journeys' => 'user_journeys#index'
     post '/user_journeys' => 'user_journeys#create'

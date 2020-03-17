@@ -2,5 +2,6 @@
 {
   id: journey.id,
   starting_location_id: journey.starting_location_id,
-  starting_location: (render partial: "api/locations/location.json.jb", locals: {location: journey.starting_location}) #i have to include the full path, cause the partial does not live in this folder. 
+  starting_location: (render partial: "api/locations/location.json.jb", locals: {location: journey.starting_location}), #i have to include the full path, cause the partial does not live in this folder.
+  users: journey.users 
 }
