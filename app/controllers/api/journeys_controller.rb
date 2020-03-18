@@ -6,16 +6,6 @@ class Api::JourneysController < ApplicationController
     render 'index.json.jb'
   end
 
-  # def add_user
-  #   @journey = Journey.find(params[:id])
-  #   @user = User.find(params[:user_id])
-  #   user_journey = UserJourney.create(user_id: @user.id,
-  #                      journey_id: @journey.id,
-  #                      completed: false)
-  #   user_journey.save 
-  #   render 'show.json.jb'
-  # end
-
   def add_users
     @journey = Journey.find(params[:id])
     @users = params[:user_ids]

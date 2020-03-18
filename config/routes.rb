@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   namespace :api do
+
     get '/users' => 'users#index'
     post '/users' => 'users#create'
     get '/users/:id' => 'users#show'
@@ -19,10 +20,10 @@ Rails.application.routes.draw do
 
     get '/journeys' => 'journeys#index'
     post '/journeys' => 'journeys#create'
+    post '/journeys/:id/add_users' => 'journeys#add_users'
     get '/journeys/:id' => 'journeys#show'
     patch '/journeys/:id' => 'journeys#update'
     delete '/journeys/:id' => 'journeys#destroy'
-    post '/journeys/:id/add_users' => 'journeys#add_users'
 
     get '/user_journeys' => 'user_journeys#index'
     post '/user_journeys' => 'user_journeys#create'
