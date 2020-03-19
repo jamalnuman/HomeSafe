@@ -36,8 +36,11 @@ class Api::UserJourneysController < ApplicationController
     @user_journey.journey_id = params[:journey_id] || @user_journey.journey_id
     @user_journey.completed = params[:completed] || @user_journey.completed
 
-    if @user_journey.save
-      TwilioClient.new.send_text(@user_journey.user_id)
+    # if @user_journey.completed = true
+    #   TwilioClient.new.send_text(@user_journey.user_id)
+    # end
+
+    if @user_journey.save 
       render 'show.json.jb'
     else
       render json: {errors: @user_journey.errors.full_messages}, status: :unprocessable_entity
