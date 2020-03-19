@@ -36,8 +36,8 @@ class Api::UserJourneysController < ApplicationController
     @user_journey.journey_id = params[:journey_id] || @user_journey.journey_id
     @user_journey.completed = params[:completed] || @user_journey.completed
 
-    if @user_journey.completed = true
-      TwilioClient.new.send_text(@user_journey.user_id)
+    if @user_journey.completed # this is the same as @user_journey.completed == true..remember difference between '=' and '=='
+      TwilioClient.new.send_text(@user_journey.user)#user will return the object and user.id will return just the id number, which is the integer
     end
 
     if @user_journey.save 

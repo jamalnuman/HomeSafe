@@ -6,4 +6,7 @@
   phone_number: location.phone_number,
   latitude: location.latitude, 
   longitude: location.longitude
+  # user_journeys: location.user_journeys.map { |user_journey| 
+  #   id: user_journey.id
+  # },
 }
