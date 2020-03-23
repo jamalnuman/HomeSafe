@@ -5,7 +5,7 @@ formatted_user_journey = {
       id: user_journey.id,
       journey: {
         id: user_journey.journey.id,
-        created_at: user_journey.journey.created_at,
+        created_at: user_journey.journey.created_at.strftime("%A %B %d, %Y"),
         starting_location: (render partial: "api/locations/location.json.jb", locals: {location: user_journey.journey.starting_location }) 
       },
       completed: user_journey.completed
