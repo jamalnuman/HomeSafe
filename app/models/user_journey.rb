@@ -13,7 +13,7 @@ class UserJourney < ApplicationRecord
     @client.api.account.messages.create(
       to: user.phone_number,
       from: +12057234319,
-      body: "#{user.name} arrived at his destination."
+      body: "#{user.first_name} arrived at his destination."
       )
   end
 
