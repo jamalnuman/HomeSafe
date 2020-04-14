@@ -2,13 +2,13 @@ class Api::JourneysController < ApplicationController
   before_action :authenticate_user
 
   def index
-    @journeys = current_user.journeys # or it can be current_user.journeys..this was it was linked to a speific user, which required login
+    @journeys = current_user.journeys
     render 'index.json.jb'
   end
 
   def add_users
     @journey = Journey.find(params[:id])
-    @users = params[:user_ids]
+    @users = params[:user_ids] #this should come from the frontend..when adding users to the Journey?
     @users.map do |user_id|
       user_journey = UserJourney.create(user_id: user_id,
                          journey_id: @journey.id,
@@ -23,7 +23,7 @@ class Api::JourneysController < ApplicationController
     @journey = Journey.new(starting_location_id: params[:starting_location_id]) 
 
     if @journey.save
-      UserJourney.create(user_id: current_user.id,
+      UserJourney.create(user_id: current_user.id, #this is for the specific user logged on. different from the add_user method above.
                          journey_id: @journey.id,
                          completed: false) 
       render 'show.json.jb'
