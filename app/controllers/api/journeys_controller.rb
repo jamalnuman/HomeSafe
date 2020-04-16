@@ -8,7 +8,7 @@ class Api::JourneysController < ApplicationController
 
   def add_users
     @journey = Journey.find(params[:id])
-    @users = params[:user_ids] #this should come from the frontend..when adding users to the Journey?
+    @users = params[:user_ids] #this comes from the frontend..when adding users to the Journey
     @users.map do |user_id|
       user_journey = UserJourney.create(user_id: user_id,
                          journey_id: @journey.id,
