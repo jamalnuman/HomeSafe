@@ -1,6 +1,8 @@
-Brief Technical Description: Full stack application written in Vue.js and Rails; uses technologies such as Google maps, Geocoder, Twilio. 
+### Brief Technical Description: 
 
-The Problem Addressed:
+Full stack application written in Vue.js and Rails; uses technologies such as Google maps, Geocoder, Twilio. 
+
+### The Problem Addressed:
 
 Spending time with family and friends can be a wonderful occasion. At the end of the night when everyone goes home, most people are too tired to call or text everyone else confirming they reached home. So how can we confirm that everyone arrived home safely? This application was created to do that for you. 
 
