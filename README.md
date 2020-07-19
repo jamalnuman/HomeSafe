@@ -15,8 +15,7 @@ My route home would be displayed and tracked with GPS.
 ![](images/Route.png)
 
 
-
-When I arrive home, the application will automatically send a message to the rest of the group confirming that I arrived.
+When I arrive home, the application automatically sends a message to the rest of the group confirming that I arrived.
 <img src="images/ArrivalScreenshot.jpeg" width=300>
 
 ### Let's connect. 
